@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#PBS -j oe
+#PBS -q all.q
+cd ${PBS_O_WORKDIR}
+
+# install 
+# conda install -c bioconda panphlan
+
+# databese
+# https://sites.google.com/site/panphlanfaq/database
