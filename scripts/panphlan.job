@@ -9,3 +9,9 @@ cd ${PBS_O_WORKDIR}
 
 # databese
 # https://sites.google.com/site/panphlanfaq/database
+
+
+mkdir -p analysis/panphlan
+cd analysis/panphlan
+
+panphlan_map.py -c panphlan_smutans16 -i ../../data/20200331/fastq_3/PT_001_FDME202334895-1a_H33WFDSXY_L3_1.clean.fq.gz -o map_results/PT_001_FDME202334895-1a_H33WFDSXY_L3_1.clean.fq.gz.csv --verbose
