@@ -7,4 +7,10 @@
 mkdir -p analysis/qc_report
 cd analysis
 
-(time fastqc --nogroup -o qc_report ../data/20200331/fastq_3/PT_001_FDME202334895-1a_H33WFDSXY_L3_1.clean.fq.gz &) >& log.qc.txt
+#(time fastqc --nogroup -o qc_report ../data/20200331/fastq_3/PT_001_FDME202334895-1a_H33WFDSXY_L3_1.clean.fq.gz &) >& log.qc.txt
+
+for i in ../data/20200331/fastq_3/PT_00* 
+do
+FILENAME=$(basename $i)
+(time fastqc --nogroup -o qc_report $i &) >& log.qc.$FILENAME.txt
+done
