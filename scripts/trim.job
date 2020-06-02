@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#PBS -j oe
+#PBS -q all.q
+
+
+mkdir -p analysis/trim
+cd analysis
+
+for i in ../data/20200331/fastq_3/PT_00* 
+do
+FILENAME=$(basename $i)
+(time fastqc --nogroup -o qc_report $i &) >& log.qc.$FILENAME.txt
+done
