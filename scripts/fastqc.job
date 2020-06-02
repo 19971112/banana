@@ -7,4 +7,4 @@
 mkdir -p analysis/qc_report
 cd analysis
 
-fastqc --nogroup -o qc_report ../data/20200331/fastq_3/PT_001_FDME202334895-1a_H33WFDSXY_L3_1.clean.fq.gz
+(time fastqc --nogroup -o qc_report ../data/20200331/fastq_3/PT_001_FDME202334895-1a_H33WFDSXY_L3_1.clean.fq.gz &) >& log.qc.txt
