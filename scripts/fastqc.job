@@ -2,4 +2,9 @@
 
 #PBS -j oe
 #PBS -q all.q
-cd $PBS_O_WORKDIR
+# conda install -c bioconda fastqc
+
+mkdir -p analysis/qc_report
+cd analysis
+
+fastqc --nogroup -o qc_report ../data/20200331/fastq_3/PT_001_FDME202334895-1a_H33WFDSXY_L3_1.clean.fq.gz
