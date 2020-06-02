@@ -2,6 +2,9 @@
 
 #PBS -j oe
 #PBS -q all.q
+cd ${PBS_O_WORKDIR}
+
+
 # conda install -c bioconda fastqc
 
 mkdir -p analysis/qc_report
